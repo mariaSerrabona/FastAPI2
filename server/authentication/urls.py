@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import LoginView, LogoutView
 from .views import LoginView, LogoutView, SignupView
-
+from .views import LoginView, LogoutView, SignupView, ProfileView
 
 urlpatterns = [
         # Auth views
@@ -16,4 +16,6 @@ urlpatterns = [
         path('auth/signup/',SignupView.as_view(), name='auth_signup'),
         path('auth/reset/', include('django_rest_passwordreset.urls',
             namespace='password_reset')),
+        path('user/profile/',
+            ProfileView.as_view(), name='user_profile'),
         ]

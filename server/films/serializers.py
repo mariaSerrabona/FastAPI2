@@ -27,6 +27,7 @@ class FilmSerializer(serializers.ModelSerializer):
             fields = '__all__'
     genres = NestedFilmGenreSerializer(many=True)
 
+
 class FilmUserSerializer(serializers.ModelSerializer):
 
     film = FilmSerializer(read_only=True)
